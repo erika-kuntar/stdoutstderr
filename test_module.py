@@ -6,5 +6,5 @@ def test_stderr_output():
     assert False
 
 def test_stdout_output():
-    print("This is a stdrr error message", file=sys.stdout)
+    print("This is a stdout error message", file=sys.stdout)
     assert False
