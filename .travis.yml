@@ -5,7 +5,7 @@ jobs:
   include:
     - name: "focal job, s390x arch"
     dist: focal
-    - name "jammy job, s390x arch"
+    - name: "jammy job, s390x arch"
     dist: jammy
     
 script:
