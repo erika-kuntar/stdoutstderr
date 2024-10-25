@@ -5,5 +5,6 @@ jobs:
   include:
     - dist: focal
     - dist: jammy
+      python: "3.11"
 script:
   - pytest
