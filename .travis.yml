@@ -1,6 +1,12 @@
 language: python
 os: linux
 arch: s390x
-dist: focal
+jobs: 
+  include:
+    - name: "focal job, s390x arch"
+    dist: focal
+    - name "jammy job, s390x arch"
+    dist: jammy
+    
 script:
   - pytest 
