@@ -1,10 +1,43 @@
 language: python
 os: linux
-arch: s390x
+#arch: s390x
 jobs:
   include:
-    - dist: focal
-    - dist: jammy
-      python: "3.11"
+    - name: "python on focal ppc64le"
+      dist: focal
+      arch: ppc64le
+      python: 3.9
+    - name: "python on focal arm64-graviton2"
+      dist: focal
+      arch: arm64-graviton2
+      python: 3.11
+    - name: "python on focal arm64"
+      dist: focal
+      arch: arm64
+      python: 3.11
+    - name: "python on focal amd64"
+      dist: focal
+      arch: amd64
+      python: 3.11
+    - name: "python on focal linux s390x"
+      dist: focal
+      arch: s390x
+      python: 3.11
+    - name: "python on jammy linux s390x"
+      dist: jammy
+      arch: s390x
+      python: 3.11
+    - name: "Python 3.8.0 on Xenial Linux"
+      python: 3.8           
+    - name: "Python 3.6.10 on FreeBSD"
+      os: freebsd
+      language: python
+    - name: "Python 3.7.4 on macOS"
+      os: osx
+      osx_image: xcode11.2  # Python 3.7.4 running on macOS 10.14.4
+      language: shell       # 'language: python' is an error on Travis CI macOS
+    - name: "Python 3.8.0 on Windows"
+      os: windows           # Windows 10.0.17134 N/A Build 17134
+      language: shell       # 'language: python' is an error on Travis CI Windows
 script:
   - pytest
